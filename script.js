@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const timeDifference = today - startDate;
     const daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-    document.getElementById('daysPassed').textContent = `${daysPassed} days`;
+    document.getElementById('daysPassed').textContent = `${daysPassed} ימים`;
 });
