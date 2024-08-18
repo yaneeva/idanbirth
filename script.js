@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
         document.getElementById('timePassed').textContent = 
-            `${days} ימים, ${hours} שעות, ${minutes} דקות, ${seconds} שניות`;
+            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
 
     updateTime(); // Initial call to display immediately
