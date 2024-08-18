@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const startDate = new Date('2024-06-10');
-    const today = new Date();
-    const timeDifference = today - startDate;
-    const daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    function updateTime() {
+        const startDate = new Date('2024-06-10T00:00:00');
+        const now = new Date();
 
-    document.getElementById('daysPassed').textContent = `${daysPassed} `;
+        const timeDifference = now - startDate;
+        
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById('timePassed').textContent = 
+            `${days} ימים, ${hours} שעות, ${minutes} דקות, ${seconds} שניות`;
+    }
+
+    updateTime(); // Initial call to display immediately
+    setInterval(updateTime, 1000); // Update every second
 });
